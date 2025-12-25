@@ -1,0 +1,60 @@
+import type { Service } from "./ types";
+
+export const servicesMock: Service[] = [
+  {
+    id: "bag-10",
+    title: "Доп. багаж 10 кг",
+    description: "Добавьте место в багажном отделении.",
+    currency: "RUB",
+    category: "baggage",
+    available: true,
+  },
+  {
+    id: "seat-front",
+    title: "Выбор места (ряд 1–10)",
+    description: "Места ближе к выходу, комфортнее посадка/высадка.",
+    currency: "RUB",
+    category: "seat",
+    available: true,
+  },
+  {
+    id: "priority-boarding",
+    title: "Приоритетная посадка",
+    description: "Заходите в самолёт раньше основной очереди.",
+    currency: "RUB",
+    category: "priority",
+    available: true,
+  },
+  {
+    id: "fast-track",
+    title: "Fast Track (контроль)",
+    description: "Ускоренное прохождение контроля безопасности.",
+    currency: "RUB",
+    category: "priority",
+    available: true,
+  },
+  {
+    id: "lounge",
+    title: "Доступ в зал ожидания (Lounge)",
+    description: "Комфортная зона ожидания с напитками и Wi-Fi.",
+    currency: "RUB",
+    category: "lounge",
+    available: true,
+  },
+  {
+    id: "insurance",
+    title: "Страховка поездки",
+    description: "Базовое покрытие на время перелёта/поездки.",
+    currency: "RUB",
+    category: "insurance",
+    available: true,
+  },
+  {
+    id: "meal",
+    title: "Питание на борту",
+    description: "Лёгкий перекус + напиток.",
+    currency: "RUB",
+    category: "meal",
+    available: true,
+  },
+];
