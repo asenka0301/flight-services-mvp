@@ -1,23 +1,25 @@
-export type ServiceButtonState = "add" | "unavailable";
+export type ServiceButtonState = "add" | "added" | "unavailable";
 
 type Result = {
   text: string;
-  variant: "primary" | "secondary";
+  variant: "primary";
   disabled: boolean;
-  isLoading: boolean;
 };
 
 type Params = {
   available: boolean;
+  isSelected: boolean;
 };
 
-export const getServiceItemButtonProps = ({ available }: Params): Result => {
-  const state: ServiceButtonState = !available ? "unavailable" : "add";
+export const getServiceItemButtonProps = ({ available, isSelected }: Params): Result => {
+  const state: ServiceButtonState = !available ? "unavailable" : isSelected ? "added" : "add";
 
   switch (state) {
     case "add":
-      return { text: "Добавить", variant: "primary", disabled: false, isLoading: false };
+      return { text: "Добавить", variant: "primary", disabled: false };
+    case "added":
+      return { text: "Удалить", variant: "primary", disabled: false };
     case "unavailable":
-      return { text: "Недоступно", variant: "secondary", disabled: true, isLoading: false };
+      return { text: "Недоступно", variant: "primary", disabled: true };
   }
 };

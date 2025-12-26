@@ -7,11 +7,22 @@ type ServiceItemProps = {
   title: string;
   price: number;
   available: boolean;
+  id: string;
+  isSelected: boolean;
+  onToggle: (id: string) => void;
 };
 
-export const ServiceItem: FC<ServiceItemProps> = ({ title, price, available }) => {
+export const ServiceItem: FC<ServiceItemProps> = ({
+  title,
+  price,
+  available,
+  id,
+  isSelected,
+  onToggle,
+}) => {
   const btn = getServiceItemButtonProps({
     available,
+    isSelected,
   });
   return (
     <div className={styles.item}>
@@ -19,7 +30,7 @@ export const ServiceItem: FC<ServiceItemProps> = ({ title, price, available }) =
         <h2 className={styles.title}>{title}</h2>
         <span className={styles.price}>₽{price}</span>
       </div>
-      <Button type="button" variant="primary" disabled={btn.disabled}>
+      <Button type="button" variant="primary" disabled={btn.disabled} onClick={() => onToggle(id)}>
         {btn.text}
       </Button>
     </div>

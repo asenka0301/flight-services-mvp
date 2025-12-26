@@ -9,6 +9,12 @@
   background-color: #16a34a;
 }
 
+.secondary {
+  color: #16a34a;
+  background-color: #fff;
+  border: 1px solid #16a34a;
+}
+
 .btn:disabled {
   color: #868c98;
   background-color: #e5e7eb;
