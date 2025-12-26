@@ -1,0 +1,15 @@
+.btn {
+  padding: 10px 16px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.primary {
+  background-color: #16a34a;
+}
+
+.btn:disabled {
+  color: #868c98;
+  background-color: #e5e7eb;
+}

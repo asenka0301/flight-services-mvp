@@ -1,7 +1,11 @@
 import { ServicesPage } from "../pages/services/ui/ServicesPage";
 
 function App() {
-  return <ServicesPage />;
+  return (
+    <main className="container">
+      <ServicesPage />
+    </main>
+  );
 }
 
 export default App;
