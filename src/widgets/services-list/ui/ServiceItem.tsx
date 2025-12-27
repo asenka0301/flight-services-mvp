@@ -30,9 +30,17 @@ export const ServiceItem: FC<ServiceItemProps> = ({
         <h2 className={styles.title}>{title}</h2>
         <span className={styles.price}>₽{price}</span>
       </div>
-      <Button type="button" variant="primary" disabled={btn.disabled} onClick={() => onToggle(id)}>
-        {btn.text}
-      </Button>
+      <div className={styles.btnWrapper}>
+        <Button
+          type="button"
+          variant="primary"
+          disabled={btn.disabled}
+          onClick={() => onToggle(id)}
+          className={`${isSelected ? "bg-red" : ""}`}
+        >
+          {btn.text}
+        </Button>
+      </div>
     </div>
   );
 };

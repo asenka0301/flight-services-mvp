@@ -31,17 +31,25 @@ export const ServicesPage: FC = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Доп.услуги к перелету</h1>
-      <ServicesList
-        services={services}
-        selectedServices={cart.selectedIds}
-        onToggle={handleToggle}
-      />
-      <CartSummary
-        selectedServices={selectedServices}
-        totalSum={totalSum}
-        // handleCheckout={handleCheckout}
-        handleClear={handleClear}
-      />
+      <div className={styles.wrapper}>
+        <div className={styles.listWrapper}>
+          <div className={styles.list}>
+            <ServicesList
+              services={services}
+              selectedIds={cart.selectedIds}
+              onToggle={handleToggle}
+            />
+          </div>
+        </div>
+        <div className={styles.card}>
+          <CartSummary
+            selectedServices={selectedServices}
+            totalSum={totalSum}
+            // handleCheckout={handleCheckout}
+            handleClear={handleClear}
+          />
+        </div>
+      </div>
     </div>
   );
 };

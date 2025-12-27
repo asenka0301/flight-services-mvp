@@ -2,7 +2,45 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px 16px;
-  border: 2px solid #b1f4c9;
+  padding: 16px;
+  border: 2px solid var(--blue-100);
   border-radius: 20px;
+}
+
+.lists {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.textWrapper {
+  padding: 12px;
+  font-size: 14px;
+  color: var(--blue-200);
+  background-color: var(--grey-50);
+  border: 1px solid var(--blue-100);
+  border-radius: 10px;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  margin: 5px 0;
+  background-color: var(--blue-100);
+}
+
+.sum {
+  font-weight: 700;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+@media (max-width: 767px) {
+  .btnWrapper {
+    flex-direction: column;
+  }
 }

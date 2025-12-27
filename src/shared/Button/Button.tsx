@@ -5,6 +5,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
   isLoading?: boolean;
   children: ReactNode;
+  className?: string;
 };
 
 export const Button: FC<ButtonProps> = ({
@@ -13,6 +14,7 @@ export const Button: FC<ButtonProps> = ({
   isLoading = false,
   disabled,
   children,
+  className,
   ...rest
 }) => {
   const isDisabled = disabled || isLoading;
@@ -21,7 +23,7 @@ export const Button: FC<ButtonProps> = ({
     <button
       type={type}
       disabled={isDisabled}
-      className={`${styles.btn} ${styles[variant]}`}
+      className={`${className && styles[className]} ${styles.btn} ${styles[variant]}`}
       {...rest}
     >
       {children}

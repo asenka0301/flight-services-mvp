@@ -1,9 +1,56 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  flex: 1;
+  gap: 24px;
+  min-height: 0;
 }
 
 .title {
+  flex: 0 0 auto;
   font-size: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  min-height: 0;
+}
+
+.listWrapper {
+  flex: 2;
+  border: 2px solid var(--blue-100);
+  border-radius: 28px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.list {
+  flex: 2;
+  min-height: 0;
+  overflow: auto;
+  height: 100%;
+  scrollbar-gutter: stable;
+}
+
+.card {
+  flex: 1;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    gap: 16px;
+  }
+  .wrapper {
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+  }
+  .listWrapper {
+    flex: 1 1 auto;
+  }
+  .card {
+    flex: 0 0 auto;
+  }
 }

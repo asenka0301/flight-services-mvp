@@ -1,16 +1,17 @@
 .items {
   display: flex;
   flex-direction: column;
-
-  gap: 16px;
+  gap: 10px;
+  padding: 16px;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 10px 16px;
-  border: 2px solid #b1f4c9;
+  border: 2px solid var(--blue-100);
   border-radius: 20px;
 }
 
@@ -25,5 +26,19 @@
 }
 
 .price {
-  color: #93b8a0;
+  font-size: 14px;
+  color: var(--blue-200);
+}
+
+.btnWrapper {
+  width: 130px;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 14px;
+  }
+  .btnWrapper {
+    width: 110px;
+  }
 }

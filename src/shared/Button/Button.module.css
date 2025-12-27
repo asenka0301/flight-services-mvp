@@ -1,21 +1,33 @@
 .btn {
+  width: 100%;
   padding: 10px 16px;
+  font-size: 16px;
   font-weight: 700;
   color: #fff;
   border-radius: 10px;
 }
 
 .primary {
-  background-color: #16a34a;
+  background-color: var(--main-color);
 }
 
 .secondary {
-  color: #16a34a;
+  color: var(--main-color);
   background-color: #fff;
-  border: 1px solid #16a34a;
+  border: 1px solid var(--main-color);
+}
+
+.bg-red {
+  background-color: var(--color-red);
 }
 
 .btn:disabled {
-  color: #868c98;
-  background-color: #e5e7eb;
+  color: var(--grey-200);
+  background-color: var(--grey-100);
+}
+
+@media (max-width: 767px) {
+  .btn {
+    font-size: 14px;
+  }
 }

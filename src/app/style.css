@@ -1,7 +1,24 @@
+:root {
+  --main-color: #2563eb;
+  --color-dark: #20326b;
+  --blue-100: #d5e8ff;
+  --blue-200: #8e9cc4;
+  --grey-50: #f8fafc;
+  --grey-100: #e5e7eb;
+  --grey-200: #868c98;
+  --color-red: #dc2626;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
@@ -9,13 +26,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
+  color: var(--color-dark);
 }
 
 .container {
+  display: flex;
+  flex-direction: row;
+  height: 100dvh;
+  min-height: 0;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0;
+  padding: 16px;
 }
 
 h1,
@@ -33,7 +55,7 @@ button {
   cursor: pointer;
 }
 
-@media (max-width: 814px) {
+@media (max-width: 767px) {
   .container {
     padding: 16px;
   }

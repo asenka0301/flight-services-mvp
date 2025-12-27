@@ -5,11 +5,11 @@ import type { Service } from "../../../ entities/services/model/ types";
 
 type ServicesListProps = {
   services: Array<Service>;
-  selectedServices: string[];
+  selectedIds: string[];
   onToggle: (id: string) => void;
 };
 
-export const ServicesList: FC<ServicesListProps> = ({ services, selectedServices, onToggle }) => {
+export const ServicesList: FC<ServicesListProps> = ({ services, selectedIds, onToggle }) => {
   return (
     <div className={styles.items}>
       {services.map(({ title, id, price, available }) => (
@@ -20,7 +20,7 @@ export const ServicesList: FC<ServicesListProps> = ({ services, selectedServices
           available={available}
           id={id}
           onToggle={onToggle}
-          isSelected={selectedServices.includes(id)}
+          isSelected={selectedIds.includes(id)}
         />
       ))}
     </div>
