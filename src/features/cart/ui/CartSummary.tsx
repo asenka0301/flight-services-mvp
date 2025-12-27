@@ -7,9 +7,15 @@ type CartSummaryProps = {
   selectedServices: Service[];
   totalSum: number;
   handleClear: () => void;
+  // handleCheckout: () => void;
 };
 
-const CartSummary: FC<CartSummaryProps> = ({ selectedServices, totalSum, handleClear }) => {
+const CartSummary: FC<CartSummaryProps> = ({
+  selectedServices,
+  totalSum,
+  handleClear,
+  // handleCheckout,
+}) => {
   const isEmpty = selectedServices.length === 0;
   return (
     <div className={styles.container}>

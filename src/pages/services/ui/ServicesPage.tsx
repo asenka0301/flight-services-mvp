@@ -9,18 +9,21 @@ import {
   selectTotalSum,
 } from "../../../features/cart/model/cart.selectors";
 import CartSummary from "../../../features/cart/ui/CartSummary";
+import { orderServices } from "../../../widgets/services-list/lib/orderServices";
 
 export const ServicesPage: FC = () => {
   const services = servicesMock;
   const [cart, dispatch] = useReducer(cartReducer, initialCartState);
 
-  const selectedServices = useMemo(() => selectSelectedServices(services, cart), [services, cart]);
+  const { selectedServices, totalSum, orderedServices } = useMemo(() => {
+    const selectedServices = selectSelectedServices(services, cart);
+    const totalSum = selectTotalSum(services, cart);
+    const orderedServices = orderServices(services, cart.selectedIds);
 
-  const totalSum = useMemo(() => selectTotalSum(services, cart), [services, cart]);
+    return { selectedServices, totalSum, orderedServices };
+  }, [services, cart]);
 
-  const handleToggle = (id: string) => {
-    dispatch({ type: "TOGGLE", id });
-  };
+  const handleToggle = (id: string) => dispatch({ type: "TOGGLE", id });
 
   const handleClear = () => dispatch({ type: "CLEAR" });
 
@@ -35,7 +38,7 @@ export const ServicesPage: FC = () => {
         <div className={styles.listWrapper}>
           <div className={styles.list}>
             <ServicesList
-              services={services}
+              services={orderedServices}
               selectedIds={cart.selectedIds}
               onToggle={handleToggle}
             />
