@@ -32,7 +32,7 @@ const CartSummary: FC<CartSummaryProps> = ({
       ) : (
         <div className={styles.textWrapper}>
           <p>Пока ничего не выбрано</p>
-          <p>Добавьте услуги из списка выше</p>
+          <p>Добавьте услуги из списка</p>
         </div>
       )}
       <div className={styles.line} />
