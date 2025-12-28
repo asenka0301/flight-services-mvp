@@ -7,14 +7,16 @@ type CartSummaryProps = {
   selectedServices: Service[];
   totalSum: number;
   handleClear: () => void;
-  // handleCheckout: () => void;
+  handleCheckout: () => void;
+  isCheckoutLoading?: boolean;
 };
 
 const CartSummary: FC<CartSummaryProps> = ({
   selectedServices,
   totalSum,
   handleClear,
-  // handleCheckout,
+  handleCheckout,
+  isCheckoutLoading,
 }) => {
   const isEmpty = selectedServices.length === 0;
   return (
@@ -41,11 +43,21 @@ const CartSummary: FC<CartSummaryProps> = ({
         <span className={styles.sum}>{`${" "} ₽${!isEmpty ? totalSum.toFixed(2) : "0.00"}`}</span>
       </div>
       <div className={styles.btnWrapper}>
-        <Button type="button" variant="primary" disabled={isEmpty}>
+        <Button
+          type="button"
+          variant="primary"
+          disabled={isCheckoutLoading || isEmpty}
+          onClick={handleCheckout}
+        >
           Оформить
         </Button>
         {!isEmpty && (
-          <Button type="button" variant="secondary" onClick={handleClear}>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={handleClear}
+            disabled={isCheckoutLoading}
+          >
             Очистить
           </Button>
         )}

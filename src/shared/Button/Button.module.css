@@ -26,6 +26,11 @@
   background-color: var(--grey-100);
 }
 
+.secondary:disabled {
+  background-color: #fff;
+  border-color: var(--grey-200);
+}
+
 @media (max-width: 767px) {
   .btn {
     font-size: 14px;
